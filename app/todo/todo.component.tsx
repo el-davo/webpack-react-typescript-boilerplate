@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { todoState } from './todo.state';
 import { Card, CardText } from 'material-ui/Card';
+import * as React from 'react';
 import { TodoListComponent } from './list/todo-list.component';
+import { TodoState } from './todo.state';
 
-interface props {
-  todo: todoState;
+interface Props {
+  todo: TodoState;
   fetchTodoList();
 }
 
-export class TodoComponent extends React.Component<props, any> {
+export class TodoComponent extends React.Component<Props, any> {
 
   constructor(props, context) {
     super(props, context);
@@ -31,6 +31,6 @@ export class TodoComponent extends React.Component<props, any> {
           }
         </CardText>
       </Card>
-    )
+    );
   }
 }

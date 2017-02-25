@@ -1,15 +1,15 @@
-import * as React from 'react';
-import { todoState } from '../todo.state';
+import Avatar from 'material-ui/Avatar';
 import { Card, CardText } from 'material-ui/Card';
 import { List, ListItem } from 'material-ui/List';
-import Avatar from 'material-ui/Avatar';
 import TodoItemIcon from 'material-ui/svg-icons/action/today';
+import * as React from 'react';
+import { TodoState } from '../todo.state';
 
-interface props {
-    todo: todoState;
+interface Props {
+    todo: TodoState;
 }
 
-export class TodoListComponent extends React.Component<props, any> {
+export class TodoListComponent extends React.Component<Props, any> {
 
     constructor(props, context) {
         super(props, context);
@@ -20,14 +20,16 @@ export class TodoListComponent extends React.Component<props, any> {
             <List>
                 {
                     this.props.todo.todoList.map((todo, key) => {
-                        return <ListItem key={key}
-                            primaryText={todo.name}
-                            secondaryText={todo.description}
-                            leftAvatar={<Avatar icon={<TodoItemIcon />} />}
-                         />
+                        return (
+                            <ListItem key={key}
+                                primaryText={todo.name}
+                                secondaryText={todo.description}
+                                leftAvatar={<Avatar icon={<TodoItemIcon />} />}
+                            />
+                        );
                     })
                 }
             </List>
-        )
+        );
     }
 }

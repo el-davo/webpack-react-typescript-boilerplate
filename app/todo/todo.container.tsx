@@ -1,22 +1,22 @@
 import * as React from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as actions from './todo.actions';
-import {todoState} from './todo.state';
-import {TodoComponent} from './todo.component';
+import { TodoComponent } from './todo.component';
+import { TodoState } from './todo.state';
 
-interface props {
-    todo: todoState;
-    actions: actions;
+interface Props {
+  todo: TodoState;
+  actions: Actions;
 }
 
-interface actions {
+interface Actions {
   fetchTodoList();
 }
 
-const TodoContainer: React.StatelessComponent<props> = props => {
+const TodoContainer: React.StatelessComponent<Props> = (props) => {
   return (
-    <TodoComponent todo={props.todo} fetchTodoList={props.actions.fetchTodoList}/>
+    <TodoComponent todo={props.todo} fetchTodoList={props.actions.fetchTodoList} />
   );
 };
 
@@ -28,7 +28,7 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({...actions}, dispatch)
+    actions: bindActionCreators({ ...actions }, dispatch)
   };
 }
 
