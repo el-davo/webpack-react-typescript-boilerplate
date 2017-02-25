@@ -12,7 +12,7 @@ git clone https://github.com/el-davo/webpack-react-typescript-boilerplate.git yo
 
 ## Installation
 
-It is reccommended to use yarn for Installation. If you havent installed yarn please check it out [![Here](https://yarnpkg.com/en/)] then use the command below to install dependencies
+It is reccommended to use yarn for Installation. If you havent installed yarn please check it out [here](https://yarnpkg.com/en/), then use the command below to install dependencies
 
 ```
 yarn
