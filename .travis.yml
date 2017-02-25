@@ -1,11 +1,11 @@
 language: node_js
 node_js:
   - "6"
-  
+
 install:
   - npm install -g yarn
   - yarn
-  - npm lint
+  - npm run lint
   - npm test
 
 cache:
