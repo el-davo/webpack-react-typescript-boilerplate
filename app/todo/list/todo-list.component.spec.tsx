@@ -1,8 +1,8 @@
-import * as React from 'react';
 import { mount, shallow } from 'enzyme';
 import { List, ListItem } from 'material-ui/List';
-import { TodoListComponent } from './todo-list.component';
+import * as React from 'react';
 import { todo } from '../todo.state';
+import { TodoListComponent } from './todo-list.component';
 
 describe('<TodoListComponent />', () => {
 

@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { spy } from 'sinon';
 import { mount, shallow } from 'enzyme';
 import { Card, CardText } from 'material-ui/Card';
-import { TodoComponent } from './todo.component';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { todo } from './todo.state';
-import { TodoListComponent } from './list/todo-list.component';
+import * as React from 'react';
+import { spy } from 'sinon';
 import { LoadingComponent } from '../common/loading.component';
+import { TodoListComponent } from './list/todo-list.component';
+import { TodoComponent } from './todo.component';
+import { todo } from './todo.state';
 
 describe('<TodoComponent />', () => {
 

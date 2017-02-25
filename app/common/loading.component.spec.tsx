@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { spy } from 'sinon';
 import { mount, shallow } from 'enzyme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import * as React from 'react';
+import { spy } from 'sinon';
 import { LoadingComponent } from './loading.component';
 
 describe('<TodoComponent />', () => {
