@@ -12,7 +12,6 @@ This is a boilerplate project using the below technologies
  * Redux
  * Redux-Saga
  * React-material
-
  * Mocha
  * Sinon
  * Should.js
