@@ -18,3 +18,19 @@ It is reccommended to use yarn for Installation. If you havent installed yarn pl
 yarn
 ```
 
+## Commands
+
+To run the app in development mode use
+
+```
+npm run dev
+```
+
+To run tests use one of the commands below, the second command will watch for changes and re-run the tests
+
+```
+npm run test
+
+npm run test:watch
+```
+
