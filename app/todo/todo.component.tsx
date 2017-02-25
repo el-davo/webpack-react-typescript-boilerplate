@@ -1,5 +1,6 @@
 import { Card, CardText } from 'material-ui/Card';
 import * as React from 'react';
+import {LoadingComponent} from '../common/loading.component';
 import { TodoListComponent } from './list/todo-list.component';
 import { TodoState } from './todo.state';
 
@@ -26,7 +27,7 @@ export class TodoComponent extends React.Component<Props, any> {
             !this.props.todo.isFetchingTodos ? (
               <TodoListComponent todo={this.props.todo} />
             ) : (
-              <div>Loading...</div>
+              <LoadingComponent />
             )
           }
         </CardText>
