@@ -2,6 +2,22 @@
 
 [![Build Status](https://travis-ci.org/el-davo/webpack-react-typescript-boilerplate.svg?branch=master)](https://travis-ci.org/el-davo/webpack-react-typescript-boilerplate)
 
+### What is this?
+
+This is a boilerplate project using the below technologies
+ 
+ * Webpack
+ * React
+ * Typescript
+ * Redux
+ * Redux-Saga
+ * React-material
+
+ * Mocha
+ * Sinon
+ * Should.js
+ * Enzyme
+
 ## How to use
 
 You can clone this repo for your own project using the command below
@@ -34,3 +50,8 @@ npm run test
 npm run test:watch
 ```
 
+To make a release build use the command below
+
+```
+npm run build
+```
