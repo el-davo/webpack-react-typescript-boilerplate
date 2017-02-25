@@ -7,6 +7,7 @@
 This is a boilerplate project using the below technologies
  
  * Webpack 2
+ * Webpack dev server (Hot reloading)
  * React
  * Typescript
  * Redux
