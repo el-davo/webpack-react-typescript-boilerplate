@@ -1,7 +1,7 @@
 import {fork} from 'redux-saga/effects';
 import {fetchTodoListSaga} from './todo/list/fetch-list.saga';
 
-export default function* rootSaga() {
+export function* rootSaga() {
   yield [
     fork(fetchTodoListSaga)
   ];

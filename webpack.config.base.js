@@ -6,6 +6,14 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
+        enforce: 'pre',
+        loader: 'tslint-loader',
+        options: {
+          fix: true
+        }
+      },
+      {
+        test: /\.tsx?$/,
         loaders: ['react-hot-loader', 'awesome-typescript-loader'],
         include: [path.resolve(__dirname, 'app')]
       },

@@ -1,16 +1,16 @@
 import { takeEvery } from 'redux-saga';
-import { select, call, put } from 'redux-saga/effects';
+import { call, put, select } from 'redux-saga/effects';
 import { FETCH_TODO_LIST } from '../todo.action-types';
-import { updateTodoList } from '../todo.actions';
+import { fetchTodoListFailed, updateTodoList } from '../todo.actions';
 import { fetchTodoList } from '../todo.service';
 
 function* fetch() {
   try {
-    let todoList = yield call(fetchTodoList);
+    const todoList = yield call(fetchTodoList);
 
     yield put(updateTodoList(todoList));
   } catch (err) {
-    console.log(err);
+    yield put(fetchTodoListFailed());
   }
 }
 

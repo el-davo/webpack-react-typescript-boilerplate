@@ -1,14 +1,14 @@
 export const todo = {
     isFetchingTodos: false,
     todoList: []
-}
+};
 
-export interface todoState {
+export interface TodoState {
     isFetchingTodos: boolean;
-    todoList: Array<todoItem>;
+    todoList: TodoItem[];
 }
 
-export interface todoItem {
+export interface TodoItem {
     id: string;
     name: string;
     description: string;

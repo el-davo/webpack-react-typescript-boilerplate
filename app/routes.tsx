@@ -1,10 +1,9 @@
 import * as React from 'react';
-import {Router, Route, hashHistory, IndexRoute} from 'react-router';
+import { hashHistory, IndexRoute, Route, Router } from 'react-router';
 import TodoContainer from './todo/todo.container';
 
-export default (
+export const routes = (
 	<Router history={hashHistory}>
-		<Route path="/" component={TodoContainer}>
-		</Route>
+		<Route path="/" component={TodoContainer} />
 	</Router>
 );
