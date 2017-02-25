@@ -54,3 +54,9 @@ To make a release build use the command below
 ```
 npm run build
 ```
+
+To generate a coverage report use the command below. Reports can be found under ./test_results/coverage
+
+```
+npm run coverage
+```

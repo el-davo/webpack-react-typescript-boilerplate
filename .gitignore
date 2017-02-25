@@ -1,6 +1,8 @@
 node_modules/
 dist/
+.nyc_output/
 .idea/
+test_results/
 
 yarn-error.log
 npm-debug.log
