@@ -34,6 +34,12 @@ It is reccommended to use yarn for Installation. If you havent installed yarn pl
 yarn
 ```
 
+If you dont have yarn installed then you can just use npm
+
+```
+npm i
+```
+
 ## Commands
 
 To run the app in development mode use
