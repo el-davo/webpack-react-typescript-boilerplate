@@ -4,7 +4,7 @@
 
 ### What is this?
 
-This is a boilerplate project using the below technologies
+This is a boilerplate project using the below libraries
  
  * Webpack 2
  * Webpack dev server (Hot reloading)
