@@ -9,7 +9,6 @@ describe('<TodoComponent />', () => {
     let wrapper;
 
     beforeEach(() => {
-
         wrapper = mount(<MuiThemeProvider><LoadingComponent /></MuiThemeProvider>);
     });
 
