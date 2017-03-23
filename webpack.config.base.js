@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        loaders: ['react-hot-loader', 'awesome-typescript-loader'],
+        loaders: ['react-hot-loader', 'awesome-typescript-loader?useBabel=true&useWebpackText=true&useCache=true'],
         include: [path.resolve(__dirname, 'app')]
       },
       {
