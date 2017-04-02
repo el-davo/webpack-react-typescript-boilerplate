@@ -17,6 +17,7 @@ This is a boilerplate project using the below libraries
  * Sinon
  * Should.js
  * Enzyme
+ * Webdriverio
 
 ## How to use
 
@@ -66,4 +67,11 @@ To generate a coverage report use the command below. Reports can be found under 
 
 ```
 npm run coverage
+```
+
+To run e2e tests you can use the command below. This is using Webdriverio with phantomjs 
+so it should be headless. If you want to run in real browser then you need to update wdio.conf.js
+
+```
+npm run e2e
 ```
