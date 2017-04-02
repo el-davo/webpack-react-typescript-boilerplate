@@ -7,7 +7,7 @@ install:
   - yarn
   - npm run lint
   - npm test
-  - sudo npm run e2e
+  - npm run e2e
 
 cache:
   directories:

@@ -22,7 +22,7 @@ exports.config = {
   webpackConfig,
   spaServer: {
     path: './dist',
-    port: 80,
+    port: 1025,
     fallback: 'index.html',
   },
   framework: 'mocha',
