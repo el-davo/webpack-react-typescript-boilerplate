@@ -1,8 +1,8 @@
-import { takeEvery } from 'redux-saga';
-import { call, put, select } from 'redux-saga/effects';
-import { FETCH_TODO_LIST } from '../todo.action-types';
-import { fetchTodoListFailed, updateTodoList } from '../todo.actions';
-import { fetchTodoList } from '../todo.service';
+import {takeEvery} from 'redux-saga';
+import {call, put} from 'redux-saga/effects';
+import {FETCH_TODO_LIST} from '../todo.action-types';
+import {fetchTodoListFailed, updateTodoList} from '../todo.actions';
+import {fetchTodoList} from '../todo.service';
 
 function* fetch() {
   try {

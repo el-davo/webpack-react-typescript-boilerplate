@@ -1,19 +1,18 @@
-import { mount, shallow } from 'enzyme';
+import {mount} from 'enzyme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as React from 'react';
-import { spy } from 'sinon';
-import { LoadingComponent } from './loading.component';
+import {LoadingComponent} from './loading.component';
 
 describe('<TodoComponent />', () => {
 
-    let wrapper;
+  let wrapper;
 
-    beforeEach(() => {
-        wrapper = mount(<MuiThemeProvider><LoadingComponent /></MuiThemeProvider>);
-    });
+  beforeEach(() => {
+    wrapper = mount(<MuiThemeProvider><LoadingComponent /></MuiThemeProvider>);
+  });
 
-    it('should display a loading message', () => {
-        wrapper.find('div[children="Loading..."]').should.have.length(1);
-    });
+  it('should display a loading message', () => {
+    wrapper.find('div[children="Loading..."]').should.have.length(1);
+  });
 
 });

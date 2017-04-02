@@ -1,8 +1,8 @@
-import { Card, CardText } from 'material-ui/Card';
+import {Card, CardText} from 'material-ui/Card';
 import * as React from 'react';
 import {LoadingComponent} from '../common/loading.component';
-import { TodoListComponent } from './list/todo-list.component';
-import { TodoState } from './todo.state';
+import {TodoListComponent} from './list/todo-list.component';
+import {TodoState} from './todo.state';
 
 interface Props {
   todo: TodoState;
@@ -25,10 +25,10 @@ export class TodoComponent extends React.Component<Props, any> {
         <CardText>
           {
             !this.props.todo.isFetchingTodos ? (
-              <TodoListComponent todo={this.props.todo} />
-            ) : (
-              <LoadingComponent />
-            )
+                <TodoListComponent todo={this.props.todo}/>
+              ) : (
+                <LoadingComponent />
+              )
           }
         </CardText>
       </Card>

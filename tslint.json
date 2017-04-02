@@ -7,11 +7,20 @@
     "interface-name": false,
     "interface-over-type-literal": true,
     "max-classes-per-file": false,
+    "object-literal-sort-keys": false,
+    "space-before-function-paren": [
+      true,
+      "never"
+    ],
     "max-line-length": [
       true,
       140
     ],
-    "quotemark": [true, "single", "jsx-double"],
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double"
+    ],
     "no-angle-bracket-type-assertion": true,
     "no-empty-interface": true,
     "no-string-throw": true,
@@ -28,6 +37,7 @@
       true,
       "ban-keywords"
     ],
-    "member-access": false
+    "member-access": false,
+    "ordered-imports": false
   }
 }
