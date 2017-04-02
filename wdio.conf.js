@@ -14,7 +14,7 @@ exports.config = {
   logLevel: 'silent',
   coloredLogs: true,
   screenshotPath: './test_results/e2e/screenshots',
-  baseUrl: 'http://localhost:80',
+  baseUrl: 'http://localhost:1025',
   waitforTimeout: 10000,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
