@@ -6,8 +6,8 @@ declare const global: any;
 
 injectTapEventPlugin();
 
-global.document = doc
-global.window = doc.defaultView
+global.document = doc;
+global.window = doc.defaultView;
 global.navigator = {
   userAgent: 'node.js',
   plugins: []
