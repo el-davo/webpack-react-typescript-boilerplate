@@ -4,6 +4,7 @@ let merge = require('webpack-merge');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let CompressionPlugin = require("compression-webpack-plugin");
 let BabelPlugin = require("babel-webpack-plugin");
+let CleanWebpackPlugin = require('clean-webpack-plugin');
 let baseConfig = require('./webpack.config.base');
 
 module.exports = merge(baseConfig, {
@@ -15,7 +16,8 @@ module.exports = merge(baseConfig, {
   ],
 
   output: {
-    publicPath: '../dist/'
+    publicPath: './',
+    filename: 'bundle-[chunkhash].js',
   },
 
   module: {
@@ -36,6 +38,7 @@ module.exports = merge(baseConfig, {
 
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
+    new CleanWebpackPlugin(['dist'], {}),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
@@ -51,7 +54,7 @@ module.exports = merge(baseConfig, {
         warnings: false
       }
     }),
-    new ExtractTextPlugin({ filename: 'style.css', allChunks: true }),
+    new ExtractTextPlugin({filename: 'style-[contenthash].css', allChunks: true}),
     new HtmlWebpackPlugin({ template: 'index.ejs' }),
     new CompressionPlugin({
       algorithm: "gzip",

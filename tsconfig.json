@@ -10,7 +10,8 @@
     "types": [
       "mocha",
       "node",
-      "should"
+      "should",
+      "webdriverio"
     ],
     "typeRoots": [
       "node_modules/@types"
