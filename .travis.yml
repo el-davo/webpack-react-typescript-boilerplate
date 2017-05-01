@@ -3,12 +3,12 @@ node_js:
   - "6"
 
 install:
-  - npm install -g yarn
   - yarn
   - npm run lint
   - npm test
   - npm run e2e
 
 cache:
+  yarn: true
   directories:
     - node_modules

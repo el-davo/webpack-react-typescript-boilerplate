@@ -1,11 +1,11 @@
-let webpack = require('webpack');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
-let merge = require('webpack-merge');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
-let CompressionPlugin = require("compression-webpack-plugin");
-let BabelPlugin = require("babel-webpack-plugin");
-let CleanWebpackPlugin = require('clean-webpack-plugin');
-let baseConfig = require('./webpack.config.base');
+import * as BabelPlugin from 'babel-webpack-plugin';
+import * as CleanWebpackPlugin from 'clean-webpack-plugin';
+import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as CompressionPlugin from 'compression-webpack-plugin';
+import * as merge from 'webpack-merge';
+import {DefinePlugin, optimize} from 'webpack';
+import {baseConfig} from './webpack.base';
 
 module.exports = merge(baseConfig, {
   devtool: 'cheap-module-source-map',
@@ -17,14 +17,14 @@ module.exports = merge(baseConfig, {
 
   output: {
     publicPath: './',
-    filename: 'bundle-[chunkhash].js',
+    filename: 'bundle-[chunkhash].js'
   },
 
   module: {
     rules: [
       {
         test: /\.global\.css$/,
-        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
+        loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader'})
       },
       {
         test: /^((?!\.global).)*\.css$/,
@@ -37,9 +37,9 @@ module.exports = merge(baseConfig, {
   },
 
   plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
+    new optimize.OccurrenceOrderPlugin(),
     new CleanWebpackPlugin(['dist'], {}),
-    new webpack.DefinePlugin({
+    new DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new BabelPlugin({
@@ -48,16 +48,16 @@ module.exports = merge(baseConfig, {
       sourceMaps: false,
       compact: false
     }),
-    new webpack.optimize.UglifyJsPlugin({
+    new optimize.UglifyJsPlugin({
       compressor: {
         screw_ie8: true,
         warnings: false
       }
     }),
     new ExtractTextPlugin({filename: 'style-[contenthash].css', allChunks: true}),
-    new HtmlWebpackPlugin({ template: 'index.ejs' }),
+    new HtmlWebpackPlugin({template: 'index.ejs'}),
     new CompressionPlugin({
-      algorithm: "gzip",
+      algorithm: 'gzip',
       test: /\.js$|\.html$/,
       minRatio: 0.8
     })

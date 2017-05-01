@@ -6,9 +6,9 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test mocha --compilers ts:ts-node/register --recursive --require should --require ./test-setup.ts ./app/**/*.spec.ts*",
     "test:watch": "npm test -- --watch --watch-extensions tsx,ts",
-    "dev": "cross-env NODE_ENV=development node server.js",
-    "build": "webpack --config webpack.config.prod.js",
-    "lint": "tslint app/**/*.ts*",
+    "dev": "cross-env NODE_ENV=development ts-node server.ts",
+    "build": "webpack --config webpack.prod.ts",
+    "lint": "tslint app/**/*.ts* ./*.ts",
     "lint:fix": "npm run lint -- --fix",
     "pree2e": "run-if-changed -f app/**/* -c \"npm run build\"",
     "e2e": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 wdio",
@@ -61,7 +61,8 @@
     "webdriverio": "^4.6.2",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1",
-    "webpack-merge": "^3.0.0"
+    "webpack-merge": "^3.0.0",
+    "winston": "^2.3.1"
   },
   "dependencies": {
     "@types/react": "^15.0.11",
