@@ -1,7 +1,7 @@
 {
   "name": "webpack-react-typescript-boilerplate",
   "version": "0.0.1",
-  "description": "",
+  "description": "webpack-react-typescript-boilerplate",
   "main": "index.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test mocha --compilers ts:ts-node/register --recursive --require should --require ./test-setup.ts ./app/**/*.spec.ts*",
@@ -10,12 +10,13 @@
     "build": "webpack --config webpack.config.prod.js",
     "lint": "tslint app/**/*.ts*",
     "lint:fix": "npm run lint -- --fix",
+    "pree2e": "run-if-changed -f app/**/* -c \"npm run build\"",
     "e2e": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 wdio",
     "coverage": "nyc npm test"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "el-davo",
+  "license": "MIT",
   "repository": {},
   "devDependencies": {
     "@types/enzyme": "^2.7.5",
@@ -44,6 +45,7 @@
     "open": "^0.0.5",
     "react-addons-test-utils": "^15.4.2",
     "react-hot-loader": "^1.3.1",
+    "run-if-changed": "^0.0.6",
     "selenium-standalone": "^6.1.0",
     "should": "^11.2.0",
     "sinon": "^1.17.7",
@@ -56,7 +58,6 @@
     "wdio-phantomjs-service": "^0.2.2",
     "wdio-selenium-standalone-service": "^0.0.8",
     "wdio-spa-server-service": "^1.0.0",
-    "wdio-webpack-service": "^1.0.1",
     "webdriverio": "^4.6.2",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1",

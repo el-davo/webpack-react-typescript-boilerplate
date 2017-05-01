@@ -1,5 +1,3 @@
-let webpackConfig = require('./webpack.config.prod.js');
-
 exports.config = {
   specs: [
     './test/**/*.spec.ts'
@@ -18,8 +16,7 @@ exports.config = {
   waitforTimeout: 10000,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
-  services: ['webpack', 'spa-server', 'phantomjs', /*'selenium-standalone'*/],
-  webpackConfig,
+  services: ['spa-server', 'phantomjs', /*'selenium-standalone'*/],
   spaServer: {
     path: './dist',
     port: 1025,
