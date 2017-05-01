@@ -1,11 +1,11 @@
-let webpack = require('webpack');
-let merge = require('webpack-merge');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
-let baseConfig = require('./webpack.config.base');
+import {DefinePlugin, HotModuleReplacementPlugin, NoEmitOnErrorsPlugin} from 'webpack';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as merge from 'webpack-merge';
+import {baseConfig} from './webpack.base';
 
 const port = process.env.PORT || 3000;
 
-module.exports = merge(baseConfig, {
+export const config = merge(baseConfig, {
 
   devtool: 'cheap-module-eval-source-map',
 
@@ -40,12 +40,12 @@ module.exports = merge(baseConfig, {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.DefinePlugin({
+    new HotModuleReplacementPlugin(),
+    new NoEmitOnErrorsPlugin(),
+    new DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
-    new HtmlWebpackPlugin({ template: 'index.ejs' })
+    new HtmlWebpackPlugin({template: 'index.ejs'})
   ]
 
 });
