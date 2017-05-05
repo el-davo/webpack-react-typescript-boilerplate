@@ -3,12 +3,12 @@ import * as DevServer from "webpack-dev-server";
 import * as open from "open";
 import {error, info} from "winston";
 import * as jsonServer from "json-server";
+import * as cors from "cors";
 import {config} from "./webpack.dev";
 import {db} from "./stubs/db";
 
 let server = jsonServer.create();
 let router = jsonServer.router(db);
-console.log(db);
 let middleWares = jsonServer.defaults();
 
 new DevServer(webpack(config), {
@@ -23,7 +23,7 @@ new DevServer(webpack(config), {
         poll: true
     },
     inline: true
-}).listen(3000, 'localhost', (err) => {
+}).listen(3000, 'localhost', err => {
     if (err) {
         return error(err);
     }
@@ -33,6 +33,7 @@ new DevServer(webpack(config), {
 });
 
 server.use(router);
+server.use(cors);
 server.use(middleWares);
 server.listen(3001, () => {
     info('Json-server listening on port 3001');
