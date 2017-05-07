@@ -3,6 +3,7 @@ import * as DevServer from 'webpack-dev-server';
 import * as open from 'open';
 import {error, info} from 'winston';
 import {config} from './webpack.dev';
+import './stubs/stub-server';
 
 new DevServer(webpack(config), {
   publicPath: config.output.publicPath,

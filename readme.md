@@ -18,6 +18,7 @@ This is a boilerplate project using the below libraries
  * Should.js
  * Enzyme
  * Webdriverio
+ * json-server
 
 ## How to use
 
@@ -60,7 +61,7 @@ npm run test:watch
 To make a release build use the command below
 
 ```
-npm run build
+npm run dist
 ```
 
 To generate a coverage report use the command below. Reports can be found under ./test_results/coverage
