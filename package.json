@@ -11,7 +11,7 @@
     "lint": "tslint app/**/*.ts* stubs/**/*.ts test/**/*.ts ./*.ts",
     "lint:fix": "npm run lint -- --fix",
     "pree2e": "run-if-changed -f app/**/* -c \"cross-env NODE_ENV=e2e webpack --config webpack.prod.ts\"",
-    "e2e": "wdio",
+    "e2e": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 wdio",
     "coverage": "nyc npm test"
   },
   "keywords": [],
