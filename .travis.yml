@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - "6"
+  - "7"
 
 install:
   - npm run lint
@@ -9,5 +10,3 @@ install:
 
 cache:
   yarn: true
-  directories:
-    - node_modules
