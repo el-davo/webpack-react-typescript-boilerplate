@@ -18,7 +18,7 @@ This is a boilerplate project using the below libraries
  * Should.js
  * Enzyme
  * Webdriverio
- * json-server
+ * Json-server
 
 ## How to use
 
