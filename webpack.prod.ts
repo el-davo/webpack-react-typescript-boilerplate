@@ -40,7 +40,7 @@ module.exports = merge(baseConfig, {
     new optimize.OccurrenceOrderPlugin(),
     new CleanWebpackPlugin(['dist'], {}),
     new DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
     new BabelPlugin({
       test: /\.js$/,

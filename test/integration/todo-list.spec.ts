@@ -12,13 +12,10 @@ describe('test1', () => {
 
   it('should have a list of todo items', async() => {
     let items = await todoListPageObject.getListItems();
-    items.value.length.should.eql(4);
+    items.value.length.should.eql(2);
   });
 
   it('should have correct name on each todo item', async() => {
-    todoListPageObject.itemExists('test1').should.be.true();
-    todoListPageObject.itemExists('test2').should.be.true();
-    todoListPageObject.itemExists('test3').should.be.true();
-    todoListPageObject.itemExists('test4').should.be.true();
+    todoListPageObject.itemExists('Todo 1').should.be.true();
   });
 });
