@@ -1,10 +1,10 @@
-import * as jsonServer from "json-server";
-import {info} from "winston";
-import {db} from "./db";
+import * as jsonServer from 'json-server';
+import {info} from 'winston';
+import {db} from './db';
 
-let server = jsonServer.create();
-let router = jsonServer.router(db);
-let middleWares = jsonServer.defaults();
+const server = jsonServer.create();
+const router = jsonServer.router(db);
+const middleWares = jsonServer.defaults();
 
 const PORT = process.env.NODE_ENV === 'development' ? 3001 : 1026;
 

@@ -8,7 +8,7 @@
     "test:watch": "npm test -- --watch --watch-extensions tsx,ts",
     "dev": "cross-env NODE_ENV=development ts-node server.ts",
     "dist": "cross-env NODE_ENV=production webpack --config webpack.prod.ts",
-    "lint": "tslint app/**/*.ts* ./*.ts",
+    "lint": "tslint app/**/*.ts* stubs/**/*.ts test/**/*.ts ./*.ts",
     "lint:fix": "npm run lint -- --fix",
     "pree2e": "run-if-changed -f app/**/* -c \"cross-env NODE_ENV=e2e webpack --config webpack.prod.ts\"",
     "e2e": "concurrently -k \"ts-node ./stubs/stub-server.ts\" \"wdio\"",

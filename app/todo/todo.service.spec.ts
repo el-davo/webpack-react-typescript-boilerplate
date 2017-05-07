@@ -1,5 +1,5 @@
-import {load} from "proxyquire";
-import {spy} from "sinon";
+import {load} from 'proxyquire';
+import {spy} from 'sinon';
 
 describe('Todo Service', () => {
 

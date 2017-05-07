@@ -1,5 +1,5 @@
-import {json, post} from "./http.service";
-import {mock, restore} from "fetch-mock";
+import {json, post} from './http.service';
+import {mock, restore} from 'fetch-mock';
 
 describe('Http Service', () => {
 
@@ -15,7 +15,7 @@ describe('Http Service', () => {
             response.should.eql([{name: 'test'}]);
         });
 
-        it('should throw an error on invalid response from server', done => {
+        it('should throw an error on invalid response from server', (done) => {
             mock('/todo', {status: 404});
 
             json('/todo').catch(() => done());
@@ -32,7 +32,7 @@ describe('Http Service', () => {
             response.should.eql({name: 'test'});
         });
 
-        it('should throw an error on invalid response from server', done => {
+        it('should throw an error on invalid response from server', (done) => {
             mock('/todo', {status: 404});
 
             post('/todo', {name: 'test'}).catch(() => done());

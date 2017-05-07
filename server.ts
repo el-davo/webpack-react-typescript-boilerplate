@@ -1,8 +1,8 @@
-import * as webpack from "webpack";
-import * as DevServer from "webpack-dev-server";
-import * as open from "open";
-import {error, info} from "winston";
-import {config} from "./webpack.dev";
+import * as webpack from 'webpack';
+import * as DevServer from 'webpack-dev-server';
+import * as open from 'open';
+import {error, info} from 'winston';
+import {config} from './webpack.dev';
 import './stubs/stub-server';
 
 new DevServer(webpack(config), {
@@ -17,7 +17,7 @@ new DevServer(webpack(config), {
     poll: true
   },
   inline: true
-}).listen(3000, 'localhost', err => {
+}).listen(3000, 'localhost', (err) => {
   if (err) {
     return error(err);
   }

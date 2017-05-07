@@ -1,5 +1,5 @@
-import {name, random, lorem} from "faker";
-import {TodoItem} from "../../app/todo/todo.state";
+import {name, random, lorem} from 'faker';
+import {TodoItem} from '../../app/todo/todo.state';
 
 export const todo = [
     {
