@@ -1,3 +1,13 @@
+class JsonServerLauncher {
+  onPrepare() {
+    return new Promise((resolve) => {
+      require('ts-node/register');
+      require('./stubs/stub-server.ts');
+      resolve();
+    });
+  }
+}
+
 exports.config = {
   specs: [
     './test/**/*.spec.ts'
@@ -16,7 +26,7 @@ exports.config = {
   waitforTimeout: 10000,
   connectionRetryTimeout: 90000,
   connectionRetryCount: 3,
-  services: ['spa-server', 'phantomjs', /*'selenium-standalone'*/],
+  services: ['spa-server', new JsonServerLauncher(), 'phantomjs', /*'selenium-standalone'*/],
   spaServer: {
     path: './dist',
     port: 1025,
