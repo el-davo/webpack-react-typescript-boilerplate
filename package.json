@@ -12,7 +12,9 @@
     "lint:fix": "npm run lint -- --fix",
     "pree2e": "run-if-changed -f app/**/* -c \"cross-env NODE_ENV=e2e webpack --config webpack.prod.ts\"",
     "e2e": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 wdio",
-    "coverage": "nyc npm test"
+    "coverage": "nyc npm test",
+    "testit": "cross-env NODE_ENV=test mochista --test-files=app/**/*.spec.{ts,tsx} --source-files=app/**/*.ts --compilers ts:ts-node/register --require should --require ./test-setup.ts",
+    "testit:watch": "npm run testit -- -w --all"
   },
   "keywords": [],
   "author": "el-davo",
@@ -46,6 +48,7 @@
     "jsdom": "^9.11.0",
     "json-server": "^0.10.0",
     "mocha": "^3.2.0",
+    "mochista": "^0.12.2",
     "nyc": "^10.1.2",
     "open": "^0.0.5",
     "proxyquire": "^1.7.11",

@@ -6,7 +6,6 @@ describe('Http Service', () => {
     afterEach(() => restore());
 
     describe('json request', () => {
-
         it('should get the correct data from server', async() => {
             mock('/todo', [{name: 'test'}]);
 
