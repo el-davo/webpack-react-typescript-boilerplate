@@ -13,7 +13,7 @@
     "pree2e": "run-if-changed -f app/**/* -c \"cross-env NODE_ENV=e2e webpack --config webpack.prod.ts\"",
     "e2e": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 wdio",
     "coverage": "nyc npm test",
-    "testit": "cross-env NODE_ENV=test mochista --test-files=app/**/*.spec.{ts,tsx} --source-files=app/**/*.ts --compilers ts:ts-node/register --require should --require ./test-setup.ts",
+    "testit": "cross-env NODE_ENV=test mochista --test-files=app/**/*.spec.{ts,tsx} --source-files=app/**/*.ts --source-files-exclude=./app/index.tsx --compilers ts:ts-node/register --require should --require ./test-setup.ts",
     "testit:watch": "npm run testit -- -w --all"
   },
   "keywords": [],

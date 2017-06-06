@@ -22,5 +22,5 @@ render(
       </div>
     </Provider>
   </MuiThemeProvider>,
-  document.getElementById('root')
+  document.querySelector('body')
 );

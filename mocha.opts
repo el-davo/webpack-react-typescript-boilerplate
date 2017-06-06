@@ -1,0 +1,4 @@
+--compilers ts:ts-node/register
+--require should ./test-setup.ts
+--source-files ./app/**/*.ts*
+--test-files ./app/**/*.spec.*

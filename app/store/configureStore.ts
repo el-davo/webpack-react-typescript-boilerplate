@@ -1,3 +1,7 @@
-const config = process.env.NODE_ENV === 'production' ? require('./configureStore.prod') : require('./configureStore.dev');
+const config = {
+    production: './configureStore.prod',
+    development: './configureStore.dev',
+    test: './configureStore.prod'
+};
 
-export const configureStore = config;
+export const configureStore = require(config[process.env.NODE_ENV]);

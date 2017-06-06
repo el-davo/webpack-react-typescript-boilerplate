@@ -4,7 +4,9 @@ import * as injectTapEventPlugin from 'react-tap-event-plugin';
 
 declare const global: any;
 
-injectTapEventPlugin();
+if (typeof window !== 'undefined') { 
+  injectTapEventPlugin();
+}
 
 global.document = doc;
 global.window = doc.defaultView;
