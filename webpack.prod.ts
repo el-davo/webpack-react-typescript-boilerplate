@@ -48,6 +48,7 @@ module.exports = merge(baseConfig, {
       sourceMaps: false,
       compact: false
     }),
+    new optimize.ModuleConcatenationPlugin(),
     new optimize.UglifyJsPlugin({
       compressor: {
         screw_ie8: true,
