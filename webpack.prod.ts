@@ -50,9 +50,16 @@ module.exports = merge(baseConfig, {
     }),
     new optimize.ModuleConcatenationPlugin(),
     new optimize.UglifyJsPlugin({
-      compressor: {
-        screw_ie8: true,
-        warnings: false
+      mangle: true,
+      compress: {
+        warnings: false,
+        pure_getters: true,
+        unsafe: true,
+        unsafe_comps: true,
+        screw_ie8: true
+      },
+      output: {
+        comments: false,
       }
     }),
     new ExtractTextPlugin({filename: 'style-[contenthash].css', allChunks: true}),
