@@ -8,7 +8,7 @@
     "baseUrl": "app",
     "jsx": "react",
     "types": [
-      "mocha",
+      "jest",
       "node",
       "should",
       "webdriverio"

@@ -1,41 +1,40 @@
 import {json, post} from './http.service';
-import {mock, restore} from 'fetch-mock';
 
 describe('Http Service', () => {
 
-    afterEach(() => restore());
+    let response;
+
+    beforeEach(() => {
+        window.fetch = jest.fn().mockImplementation(() => Promise.resolve(response));
+    });
 
     describe('json request', () => {
 
-        it('should get the correct data from server', async() => {
-            mock('/todo', [{name: 'test'}]);
+        it('should get the correct data from server', () => {
+            response = {ok: true, json: () => ([{name: 'test'}])};
 
-            const response = await json('/todo');
-
-            response.should.eql([{name: 'test'}]);
+            return expect(json('/test')).resolves.toEqual([{name: 'test'}]);
         });
 
-        it('should throw an error on invalid response from server', (done) => {
-            mock('/todo', {status: 404});
+        it('should throw an error on invalid response from server', () => {
+            response = {status: 404, statusText: 'bad error'};
 
-            json('/todo').catch(() => done());
+            return expect(json('/test')).rejects.toEqual(new Error('bad error'));
         });
     });
 
     describe('post request', () => {
 
-        it('should post data to the server', async() => {
-            mock('/todo', {name: 'test'});
+        it('should post data to the server', () => {
+            response = {ok: true, json: () => ([{name: 'test'}])};
 
-            const response = await post('/todo', {name: 'test'});
-
-            response.should.eql({name: 'test'});
+            return expect(post('/todo', {name: 'test'})).resolves.toEqual([{name: 'test'}]);
         });
 
-        it('should throw an error on invalid response from server', (done) => {
-            mock('/todo', {status: 404});
+        it('should throw an error on invalid response from server', () => {
+            response = {status: 404, statusText: 'bad error'};
 
-            post('/todo', {name: 'test'}).catch(() => done());
+            return expect(post('/todo', {name: 'test'})).rejects.toEqual(new Error('bad error'));
         });
     });
 });
