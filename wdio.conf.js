@@ -10,7 +10,7 @@ class JsonServerLauncher {
 
 exports.config = {
   specs: [
-    './test/**/*.spec.ts'
+    './test/**/*.e2e-spec.ts'
   ],
   exclude: [],
   maxInstances: 10,
