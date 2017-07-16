@@ -9,7 +9,7 @@ import * as injectTapEventPlugin from 'react-tap-event-plugin';
 import {routes} from './routes';
 import {configureStore} from './store/configureStore';
 
-import 'app.css';
+//import 'app.css';
 
 injectTapEventPlugin();
 

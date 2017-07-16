@@ -9,7 +9,7 @@ export const baseConfig = {
         enforce: 'pre',
         loader: 'tslint-loader',
         options: {
-          fix: true
+          fix: false
         }
       },
       {

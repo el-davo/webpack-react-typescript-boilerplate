@@ -4,6 +4,7 @@ dist/
 .idea/
 .awcache/
 test_results/
+.coverage-cache/
 
 yarn-error.log
 npm-debug.log
