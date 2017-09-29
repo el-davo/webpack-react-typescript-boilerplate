@@ -6,7 +6,7 @@
 
 This is a boilerplate project using the below libraries
  
- * React v16
+ * React v16 (aka Fibre)
  * Webpack 3
  * Webpack dev server (Hot reloading)
  * React
