@@ -14,7 +14,7 @@ export const baseConfig = {
       },
       {
         test: /\.tsx?$/,
-        loaders: ['awesome-typescript-loader?useBabel=true&useWebpackText=true&useCache=true'],
+        loaders: ['react-hot-loader/webpack', 'awesome-typescript-loader?useBabel=true&useWebpackText=true&useCache=true'],
         include: [resolve(__dirname, 'app')]
       },
       {
