@@ -1,4 +1,4 @@
-import {mount, shallow} from 'enzyme';
+import {mount} from 'enzyme';
 import {Card, CardText} from 'material-ui/Card';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as React from 'react';
