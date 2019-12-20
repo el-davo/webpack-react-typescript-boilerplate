@@ -52,7 +52,7 @@
     "open": "^0.0.5",
     "proxyquire": "^1.7.11",
     "react-addons-test-utils": "^15.6.2",
-    "react-hot-loader": "next",
+    "react-hot-loader": "^4.12.18",
     "react-test-renderer": "^16.0.0",
     "run-if-changed": "^0.0.6",
     "selenium-standalone": "^6.1.0",
