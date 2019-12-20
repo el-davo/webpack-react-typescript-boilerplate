@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test mocha --compilers ts:ts-node/register --recursive --require should --require ./test-setup.ts ./app/**/*.spec.ts*",
     "test:watch": "npm test -- --watch --watch-extensions tsx,ts",
-    "dev": "cross-env NODE_ENV=development ts-node server.ts",
+    "start": "cross-env NODE_ENV=development ts-node server.ts",
     "dist": "cross-env NODE_ENV=production webpack --config webpack.prod.ts",
     "lint": "tslint app/**/*.ts* stubs/**/*.ts test/**/*.ts ./*.ts",
     "lint:fix": "npm run lint -- --fix",
@@ -83,7 +83,7 @@
     "@types/react-router-redux": "^4.0.41",
     "@types/redux-saga": "^0.10.5",
     "material-ui": "^0.18.6",
-    "react": "^16.0.0",
+    "react": "^16.12.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
